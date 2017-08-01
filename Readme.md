@@ -1,1 +1,1 @@
-# react-hoc
+# react-mhoc
