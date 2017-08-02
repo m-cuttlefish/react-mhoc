@@ -1,0 +1,1 @@
+{"version":3,"sources":["node_modules/react/react.js"],"names":["module","exports","require"],"mappings":"AAAA;;AAEAA,OAAOC,OAAP,GAAiBC,QAAQ,aAAR,CAAjB","file":"react.js","sourceRoot":"/Users/moyu/my-code/FECode/react-hoc","sourcesContent":["'use strict';\n\nmodule.exports = require('./lib/React');\n"]}
