@@ -1,6 +1,7 @@
 .idea/
 node_modules/
 npm-debug.log
+.happypack/
 
 # Windows image file caches
 Thumbs.db
