@@ -19,6 +19,9 @@
   "bugs": {
     "url": "https://github.com/moyuyc/react-hoc/issues"
   },
+  "peerDependencies": {
+    "react": "^15.6.1"
+  },
   "homepage": "https://github.com/moyuyc/react-hoc#readme",
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",
