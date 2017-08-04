@@ -9,7 +9,8 @@ import {stringify} from '../lib/helper'
 
 
 const EnhancedExample = editable({
-    functionDetail: true, infoDown: false
+    functionDetail: true, infoDown: false,
+    attrNames: ['local', 'state']
 })(Histogram)
 
 ReactDOM.render(

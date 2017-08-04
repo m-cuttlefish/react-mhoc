@@ -38,6 +38,10 @@
       font-weight: bold;
       color: #333;
       display: inline-block;
+
+      + .editable-control {
+        margin-left: 5px;
+      }
     }
 
     .cart(@colorList: transparent transparent transparent #bbb) {
@@ -96,6 +100,34 @@
       margin: 0;
       margin-bottom: 3px;
     }
+
+    .editable-control {
+      cursor: pointer;
+
+      input {
+        border: none;
+        outline: #eee solid .5px;
+        outline-offset: .5px;
+        width: auto;
+        //max-width: 100px;
+
+        font-family: @family;
+        font-size: @font-size;
+        padding: 0;
+        margin: 0;
+      }
+
+      button {
+        //font-family: @family;
+        font-size: @font-size;
+        width: auto;
+      }
+
+      .editable-plain-text {
+
+      }
+    }
+
     .editable-value {
       position: relative;
 
@@ -122,33 +154,6 @@
         }
 
         margin-right: 4px;
-      }
-
-      .editable-control {
-        cursor: pointer;
-
-        input {
-          border: none;
-          outline: #eee solid .5px;
-          outline-offset: .5px;
-          width: auto;
-          //max-width: 100px;
-
-          font-family: @family;
-          font-size: @font-size;
-          padding: 0;
-          margin: 0;
-        }
-
-        button {
-          //font-family: @family;
-          font-size: @font-size;
-          width: auto;
-        }
-
-        .editable-plain-text {
-
-        }
       }
 
     }
