@@ -13,7 +13,11 @@ const EnhancedExample = editable({
 })(Histogram)
 
 ReactDOM.render(
-    <EnhancedExample />,
+    <EnhancedExample
+        func={() => console.log(this)}
+        null={null}
+        num={0}
+    />,
     document.getElementById('root')
 )
 
