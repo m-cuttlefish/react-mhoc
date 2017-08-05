@@ -26,26 +26,54 @@ const EnhancedExampleB = editable({
 function Person(a, b) {
     this.name = a;
     this.age = b;
+
+    Object.defineProperty(this, 'unuse', {
+        enumerable: false,
+        writable: false,
+        value: 'aaa'
+    })
 }
+
+global.person = new Person()
 
 class State {
     @observable foo = {a: 234}
-    @observable bar = "bar"
+
+    notob = {a: 234}
+
+    @observable bar = 'bar'
+
+    init() {
+        this.foo = {a: ['I\'m', 'Initialized'], o: {x: 'xx'}}
+        this.bar = 'bbbbar'
+    }
 }
 
 @editable({
-    attrNames: ['local'],
+    attrNames: ['local', 'state'],
     groupName: 'MobxTest'
 })
 @observer
 class MobxTest extends React.Component {
-    local = new State
+    state = {
+        mobx: new State()
+    }
+    local = this.state
+
+    componentWillMount() {
+        this.state.mobx.init()
+    }
 
     render() {
         return (
             <div>
                 <h1>MobxTest</h1>
-                <pre>{stringify(this.local)}</pre>
+                <pre>
+                    foo: {stringify(this.state.mobx.foo)}
+                </pre>
+                <pre>
+                    bar: {stringify(this.state.mobx.bar)}
+                </pre>
                 <div>{this.props.children}</div>
             </div>
         )
@@ -74,7 +102,9 @@ class Container extends React.Component {
                     Ele={EnhancedExampleA}
                     ele={<EnhancedExampleA/>}
                 />
-                <EnhancedExampleB />
+                <EnhancedExampleB
+                    max={50}
+                />
                 {!this.state.hide && <EnhancedExampleB />}
                 <MobxTest />
             </div>
