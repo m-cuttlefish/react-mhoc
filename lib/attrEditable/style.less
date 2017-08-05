@@ -1,23 +1,40 @@
-.attr-editable-container {
+.attr-editable-wrap {
 
   @family: Consolas,Monaco,"Courier New",Monospaced;
   @font-size: 13px;
 
+  position: fixed;
+  left: 10px;
+  top: 10px;
   border: 1px solid #ccc;
   background-color: #fff;
   border-radius: 6px;
-  position: absolute;
-  left: 10px;
-  top: 10px;
+  z-index: 100;
 
-  z-index: 10000;
+  >.attr-editable-container {
+    padding: 5px;
+    padding-right: 28px;
+    border-bottom: 1px solid #eee;
 
-  padding-right: 28px;
+    .attr-editable-group-name {
+      font-size: 13px;
+      font-weight: bolder;
+    }
 
-  .attr-editable-name-state {
-
+    .attr-editable-root {
+      //overflow-y: auto;
+    }
   }
-  .attr-editable-root {
+
+  .attr-editable-container:last-of-type {
+    border-bottom: none;
+  }
+
+  .attr-editable-name-props {
+    // last child
+    //margin-bottom: 10px;
+  }
+  .attr-editable-item {
     position: relative;
     left: 20px;
 
@@ -107,9 +124,9 @@
       input {
         border: none;
         outline: #eee solid .5px;
-        outline-offset: .5px;
+        //outline-offset: .5px;
         width: auto;
-        //max-width: 100px;
+        min-width: 40px;
 
         font-family: @family;
         font-size: @font-size;
