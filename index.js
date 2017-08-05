@@ -1,3 +1,3 @@
 
 export styleUseable from './lib/style-useable'
-export debug from './lib/debug'
+export editable from './lib/editable'
