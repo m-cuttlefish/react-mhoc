@@ -14,7 +14,9 @@ import editable from '../lib/editable'
 import {stringify} from '../lib/helper'
 
 
-const EnhancedExampleA = editable(Histogram)
+const EnhancedExampleA = editable({
+    groupName: 'Histogram'
+})(Histogram)
 
 const EnhancedExampleB = editable({
     attrNames: ['state'], groupName: 'groupB'
@@ -32,7 +34,8 @@ class State {
 }
 
 @editable({
-    attrNames: ['local']
+    attrNames: ['local'],
+    groupName: 'MobxTest'
 })
 @observer
 class MobxTest extends React.Component {
