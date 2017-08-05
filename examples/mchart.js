@@ -55,11 +55,11 @@ class MobxTest extends React.Component {
 class Container extends React.Component {
 
     componentDidMount() {
-        setTimeout(() => {
-            this.setState({
-                hide: true
-            })
-        }, 2000)
+        // setTimeout(() => {
+        //     this.setState({
+        //         hide: true
+        //     })
+        // }, 10000)
     }
 
     state = {hide: false}

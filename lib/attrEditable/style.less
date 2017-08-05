@@ -1,7 +1,21 @@
 .attr-editable-wrap {
 
+  &.movable {
+    cursor: move;
+    border-style: dashed;
+    border-width: 1px;
+    border-color: #333;
+    * {
+      cursor: move!important;
+    }
+  }
+
+  user-select: none;
+
   @family: Consolas,Monaco,"Courier New",Monospaced;
   @font-size: 13px;
+  font-family: @family;
+  font-size: @font-size;
 
   position: fixed;
   left: 10px;
