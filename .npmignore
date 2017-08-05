@@ -1,1 +1,6 @@
 !dist/
+.idea/
+npm-debug.log
+.happypack/
+.entry/
+dist/
