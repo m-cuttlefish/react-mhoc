@@ -96,7 +96,8 @@ class Container extends React.Component {
         return (
             <div>
                 <EnhancedExampleA
-                    b={true}
+                    b={false}
+                    fun={alert}
                     person={new Person('my', 19)}
                     Person={Person}
                     Ele={EnhancedExampleA}
