@@ -143,26 +143,34 @@
       margin-bottom: 3px;
     }
 
-    .editable-control {
-      cursor: pointer;
 
+    .editable-key, .editable-control {
       input {
         border: none;
         outline: #eee solid .5px;
         //outline-offset: .5px;
         width: auto;
-        min-width: 40px;
+        //min-width: 40px;
+        max-width: 100px;
 
         font-family: @family;
         font-size: @font-size;
         padding: 0;
         margin: 0;
       }
+    }
+
+    .editable-control {
+      cursor: pointer;
+
+
 
       button {
         //font-family: @family;
         font-size: @font-size;
         width: auto;
+        padding: 0;
+        margin: 0;
       }
 
       .editable-plain-text {
@@ -170,7 +178,33 @@
       }
     }
 
-    .editable-value {
+    .editable-add-control {
+      .editable-key {
+        input {
+          max-width: 60px;
+        }
+      }
+      .editable-control {
+        input {
+          max-width: 80px;
+        }
+      }
+    }
+
+    .editable-operation {
+      margin-left: 5px;
+      text-align: center;
+      display: inline-block;
+      color: #526aff;
+      cursor: pointer;
+      font-weight: bolder;
+      vertical-align: middle;
+      user-select: none;
+      width: 12px;
+    }
+
+
+    .editable-value, .editable-add-control {
       position: relative;
 
       list-style: none;
@@ -189,6 +223,7 @@
 
         .editable-type {
           vertical-align: middle;
+
           &.Array {
             color: rgb(35, 110, 35);
           }

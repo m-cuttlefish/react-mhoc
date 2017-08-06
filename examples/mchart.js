@@ -101,6 +101,7 @@ class Container extends React.Component {
                     Person={Person}
                     Ele={EnhancedExampleA}
                     ele={<EnhancedExampleA/>}
+                    obj={{}}
                 />
                 <EnhancedExampleB
                     max={50}
