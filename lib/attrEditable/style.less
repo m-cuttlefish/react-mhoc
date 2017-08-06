@@ -29,7 +29,7 @@
   >.attr-editable-container {
     padding: 5px;
     //padding-right: 28px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #ddd;
 
     .attr-editable-group-name {
       cursor: pointer;
@@ -46,9 +46,32 @@
     border-bottom: none;
   }
 
+
+  .attr-editable-root {
+
+    >.attr-editable-item:last-of-type {
+      .attr-editable-name-props {
+        margin-bottom: 0;
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+
+
   .attr-editable-name-props {
-    // last child
-    //margin-bottom: 10px;
+    //position: relative;
+    margin-bottom: 4px;
+    &:after {
+      margin-left: -5px;
+      //margin-right: -10px;
+      content: '';
+      display: block;
+      width: 100%;
+      background-color: #ddd;
+      height: 1px;
+    }
   }
   .attr-editable-item {
     //position: relative;
