@@ -97,6 +97,7 @@ class Container extends React.Component {
             <div>
                 <EnhancedExampleA
                     b={false}
+                    date={new Date()}
                     fun={alert}
                     person={new Person('my', 19)}
                     Person={Person}

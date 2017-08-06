@@ -172,8 +172,8 @@
         outline: #eee solid .5px;
         //outline-offset: .5px;
         width: auto;
-        //min-width: 40px;
-        max-width: 100px;
+        min-width: 40px;
+        //max-width: 100px;
 
         font-family: @family;
         font-size: @font-size;
@@ -225,6 +225,23 @@
       width: 12px;
     }
 
+    @keyframes hightlight{
+      from {
+        //color: inherit;
+        background-color: inherit;
+      }
+      to {
+        //color: aquamarine;
+        background-color: #FFEB3B;
+      }
+    }
+
+    .editable-highlight {
+      animation-name: hightlight;
+      animation-duration: .5s;
+      animation-iteration-count: 1;
+      animation-timing-function: ease;
+    }
 
     .editable-value, .editable-add-control {
       position: relative;
@@ -262,9 +279,12 @@
 
         .editable-type {
           vertical-align: middle;
+          color: rgb(35, 110, 35);
 
-          &.Array {
-            color: rgb(35, 110, 35);
+
+          &.Object,
+          &.Date {
+            color: inherit;
           }
           &.Function {
             display: none;
