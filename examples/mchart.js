@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {Histogram} from 'react-mchart'
+import NormalHistogram from './Histogram/Normal'
+import TileHistogram from './Histogram/Tile'
 import 'react-mchart/css/style.css'
 
 import {
