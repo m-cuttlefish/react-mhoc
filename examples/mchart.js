@@ -20,13 +20,9 @@ const EditableDefaultHistogram = editable({
     groupName: 'DefaultHistogram'
 })(Histogram)
 
-const EditableNormalHistogram = editable({
-    attrNames: ['state'], groupName: 'NormalHistogram'
-})(NormalHistogram)
+const EditableNormalHistogram = TileHistogram;
 
-const EditableTileHistogram = editable({
-    attrNames: ['state'], groupName: 'TileHistogram'
-})(TileHistogram)
+const EditableTileHistogram = TileHistogram;
 
 
 function Person(a, b) {

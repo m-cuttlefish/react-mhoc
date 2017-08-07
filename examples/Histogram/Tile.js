@@ -4,7 +4,11 @@
  */
 import React from 'react'
 import {Histogram} from 'react-mchart'
+import editable from '../../lib/editable'
 
+const EditableHistogram = editable({
+    attrNames: ['state'], groupName: 'TileHistogram'
+})(Histogram)
 
 export default class TileHistogram extends React.Component {
 
@@ -45,7 +49,7 @@ export default class TileHistogram extends React.Component {
 
     render() {
         return (
-            <Histogram
+            <EditableHistogram
                 {...this.props}
             />
         )

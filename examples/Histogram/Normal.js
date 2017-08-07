@@ -4,6 +4,11 @@
  */
 import React from 'react'
 import {Histogram} from 'react-mchart'
+import editable from '../../lib/editable'
+
+const EditableHistogram = editable({
+    attrNames: ['state'], groupName: 'NormalHistogram'
+})(Histogram)
 
 export default class NormalHistogram extends React.Component {
     static defaultProps = {
@@ -43,7 +48,7 @@ export default class NormalHistogram extends React.Component {
 
     render() {
         return (
-            <Histogram
+            <EditableHistogram
                 {...this.props}
             />
         )
