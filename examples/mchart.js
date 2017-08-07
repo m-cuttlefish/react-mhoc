@@ -22,7 +22,7 @@ const EditableDefaultHistogram = editable({
 
 const EditableNormalHistogram = TileHistogram;
 
-const EditableTileHistogram = TileHistogram;
+const EditableTileHistogram = NormalHistogram;
 
 
 function Person(a, b) {
