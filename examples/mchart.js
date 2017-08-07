@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {Histogram} from 'react-mchart'
+import NormalHistogram from './Histogram/Normal'
+import TileHistogram from './Histogram/Tile'
 import 'react-mchart/css/style.css'
 
 import {
@@ -14,13 +16,17 @@ import editable from '../lib/editable'
 import {stringify} from '../lib/helper'
 
 
-const EnhancedExampleA = editable({
-    groupName: 'Histogram'
+const EditableDefaultHistogram = editable({
+    groupName: 'DefaultHistogram'
 })(Histogram)
 
-const EnhancedExampleB = editable({
-    attrNames: ['state'], groupName: 'groupB'
-})(Histogram)
+const EditableNormalHistogram = editable({
+    attrNames: ['state'], groupName: 'NormalHistogram'
+})(NormalHistogram)
+
+const EditableTileHistogram = editable({
+    attrNames: ['state'], groupName: 'TileHistogram'
+})(TileHistogram)
 
 
 function Person(a, b) {
@@ -95,19 +101,26 @@ class Container extends React.Component {
     render() {
         return (
             <div>
-                <EnhancedExampleA
-                    b={false}
-                    fun={alert}
-                    person={new Person('my', 19)}
-                    Person={Person}
-                    Ele={EnhancedExampleA}
-                    ele={<EnhancedExampleA/>}
-                    obj={{}}
-                />
-                <EnhancedExampleB
-                    max={50}
-                />
-                {!this.state.hide && <EnhancedExampleB />}
+                <div>
+                    <h3>EditableDefaultHistogram</h3>
+                    <EditableDefaultHistogram
+                        testProps={{
+                            func: alert,
+                            person: new Person('my', 19),
+                            Person: Person,
+                            EleClass: NormalHistogram,
+                            component: <NormalHistogram/>
+                        }}
+                    />
+                </div>
+                <div>
+                    <h3>EditableNormalHistogram</h3>
+                    <EditableNormalHistogram/>
+                </div>
+                <div>
+                    <h3>EditableTileHistogram</h3>
+                    {!this.state.hide && <EditableTileHistogram />}
+                </div>
                 <MobxTest />
             </div>
         )
