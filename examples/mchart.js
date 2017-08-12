@@ -85,11 +85,11 @@ class MobxTest extends React.Component {
 class Container extends React.Component {
 
     componentDidMount() {
-        setTimeout(() => {
-            this.setState({
-                hide: true
-            })
-        }, 4000)
+        // setTimeout(() => {
+        //     this.setState({
+        //         hide: true
+        //     })
+        // }, 4000)
     }
 
     state = {hide: false}
@@ -110,8 +110,10 @@ class Container extends React.Component {
                     />
                 </div>
                 <div>
-                    <h3>EditableNormalHistogram</h3>
-                    <EditableNormalHistogram/>
+                    <h3>EditableNormalHistogram A</h3>
+                    <EditableNormalHistogram />
+                    <h3>EditableNormalHistogram B</h3>
+                    <EditableNormalHistogram />
                 </div>
                 <div>
                     <h3>EditableTileHistogram</h3>
