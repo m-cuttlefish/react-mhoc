@@ -64,3 +64,7 @@ class App extends React.Component {
 - 1.2.1 
     1. 支持Array/Object的新增和删除
     2. 代码简单重构
+    
+- 1.2.2
+    1. 添加 Hover 高亮
+    2. 添加 View 按钮
