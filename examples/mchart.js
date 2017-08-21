@@ -17,7 +17,7 @@ import {stringify} from '../lib/helper'
 
 
 const EditableDefaultHistogram = editable({
-    groupName: 'DefaultHistogram'
+    groupName: 'DefaultHistogram '
 })(Histogram)
 
 const EditableNormalHistogram = TileHistogram;
