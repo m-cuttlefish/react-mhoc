@@ -67,6 +67,7 @@ class MobxTest extends React.Component {
     }
 
     render() {
+        // console.log(this.props);
         return (
             <div>
                 <h1>MobxTest</h1>
@@ -76,12 +77,18 @@ class MobxTest extends React.Component {
                 <pre>
                     bar: {stringify(this.state.mobx.bar)}
                 </pre>
-                <div>{this.props.children}</div>
+                <pre>
+                    Props: {stringify(this.props)}
+                </pre>
+                {/* <div>{this.props}</div> */}
             </div>
         )
     }
 }
 
+@editable({
+    groupName: 'Container'
+})
 class Container extends React.Component {
 
     componentDidMount() {
@@ -90,11 +97,15 @@ class Container extends React.Component {
         //         hide: true
         //     })
         // }, 4000)
+        setInterval(() => {
+            this.setState({count: this.state.count + 1})
+        }, 1000);
     }
 
-    state = {hide: false}
+    state = {count: 1}
 
     render() {
+        // console.log(this.state.count)
         return (
             <div>
                 <div>
@@ -119,7 +130,7 @@ class Container extends React.Component {
                     <h3>EditableTileHistogram</h3>
                     {!this.state.hide && <EditableTileHistogram />}
                 </div>
-                <MobxTest />
+                <MobxTest count={this.state.count}/>
             </div>
         )
     }
