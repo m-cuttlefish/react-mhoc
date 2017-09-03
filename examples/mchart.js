@@ -53,24 +53,33 @@ class State {
 
 @editable({
     attrNames: ['local', 'state'],
-    groupName: 'MobxTest'
+    groupName: 'MobxTest',
+    // withProps: false
 })
 @observer
 class MobxTest extends React.Component {
     state = {
         mobx: new State()
     }
+
+    static defaultRef = "defaultRef"
+
     local = this.state
 
     componentWillMount() {
         this.state.mobx.init()
     }
 
+    sayHello() {
+        console.log(this);
+        // alert('Hello!');
+    }
+
     render() {
         // console.log(this.props);
         return (
             <div>
-                <h1>MobxTest</h1>
+                <h1 ref="h1">MobxTest</h1>
                 <pre>
                     foo: {stringify(this.state.mobx.foo)}
                 </pre>
@@ -86,20 +95,21 @@ class MobxTest extends React.Component {
     }
 }
 
+// alert(MobxTest.defaultRef)
+
 @editable({
-    groupName: 'Container'
+    groupName: 'Container',
+    withProps: false
 })
 class Container extends React.Component {
 
     componentDidMount() {
-        // setTimeout(() => {
-        //     this.setState({
-        //         hide: true
-        //     })
-        // }, 4000)
         setInterval(() => {
             this.setState({count: this.state.count + 1})
         }, 1000);
+        
+        // this.refs.mobxTest.sayHello();
+        // console.log(this.refs.mobxTest.refs.h1);
     }
 
     state = {count: 1}
@@ -130,11 +140,13 @@ class Container extends React.Component {
                     <h3>EditableTileHistogram</h3>
                     {!this.state.hide && <EditableTileHistogram />}
                 </div>
-                <MobxTest count={this.state.count}/>
+                <MobxTest ref="mobxTest" count={this.state.count}/>
             </div>
         )
     }
 }
+
+
 
 ReactDOM.render(
     <Container/>,
