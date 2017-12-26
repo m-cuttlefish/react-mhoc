@@ -107,8 +107,9 @@ class Container extends React.Component {
         setInterval(() => {
             this.setState({count: this.state.count + 1})
         }, 1000);
-        
-        // this.refs.mobxTest.sayHello();
+        debugger
+        this.refs.his.origin.sayHello();
+        this.refs.mobxTest.origin.sayHello();
         // console.log(this.refs.mobxTest.refs.h1);
     }
 
@@ -121,6 +122,7 @@ class Container extends React.Component {
                 <div>
                     <h3>EditableDefaultHistogram</h3>
                     <EditableDefaultHistogram
+                        ref={"his"}
                         testProps={{
                             func: alert,
                             person: new Person('my', 19),
